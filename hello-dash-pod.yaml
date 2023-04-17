@@ -1,7 +1,15 @@
 apiVersion: v1
+kind: Namespace
+metadata:
+  name: hello-dash
+  labels:
+    name: hello-dash
+---
+apiVersion: v1
 kind: Pod
 metadata:
   name: hello-dash
+  namespace: hello-dash
   labels:
     app.kubernetes.io/name: hello-dash
 spec:
@@ -16,6 +24,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: hello-dash-service
+  namespace: hello-dash
 spec:
   type: NodePort
   selector:
@@ -24,4 +33,5 @@ spec:
   - name: hello-das-service-80
     protocol: TCP
     port: 80
+    nodePort: 32000
     targetPort: hello-dash-svc
