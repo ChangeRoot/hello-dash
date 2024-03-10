@@ -4,6 +4,8 @@ on:
     branches:
       - main
 
+permissions: write-all
+
 jobs:
   publish-hello-dash-docker-image:
     runs-on: ubuntu-latest
