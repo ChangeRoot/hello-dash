@@ -4,7 +4,8 @@ on:
     branches:
       - main
 
-permissions: write-all
+permissions:
+  packages: write
 
 jobs:
   publish-hello-dash-docker-image:
